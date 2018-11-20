@@ -5,15 +5,15 @@ import java.util.ArrayList;
 /**
  * Created on 18.11.2018.
  */
-public class Chitter extends Person {
+public class Cheater extends Person {
     ArrayList<Listener> listeners;
 
-    public Chitter() {
+    public Cheater() {
         super();
         listeners = new ArrayList<>();
     }
 
-    public Chitter(String name, String surname, String login, String pass, ArrayList<Listener> listeners) {
+    public Cheater(String name, String surname, String login, String pass, ArrayList<Listener> listeners) {
         super(name, surname, login, pass);
         listeners = new ArrayList<>();
     }
