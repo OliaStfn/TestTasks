@@ -27,13 +27,15 @@ public class Chat {
     }
 
     public void deleteAutFromChat(int id) {
-        if (authors != null) {
-            for (Person author : authors) {
-                if (author.getId() == id) {
-                    authors.remove(author);
-                }
+        for (Person author : authors) {
+            if (author.getId() == id) {
+                authors.remove(author);
+                if (authors.size() == 0) {
+
+                } else System.out.println("Чат закритий");
             }
-        } else System.out.println("Чат закритий");
+
+        }
     }
 
     public void addAutToChat(Person author) {
@@ -81,7 +83,12 @@ public class Chat {
         this.name = name;
     }
 
-    public ArrayList<Message> getMessages() {
+    public ArrayList<Message> getMessages(int id) {
+        for (Person author : authors) {
+            if (author.getId() == id) {
+                System.out.println("Учасник чату");
+            }else return null;
+        }
         return messages;
     }
 
