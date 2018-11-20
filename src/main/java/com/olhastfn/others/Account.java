@@ -5,17 +5,18 @@ package com.olhastfn.others;
  */
 public class Account {
     private int id;
+    private static int nextId=0;
     private String login;
     private String password;
 
     public Account() {
-        id = 0;
+        setId();
         login = "none";
         password = "none";
     }
 
-    public Account(int id, String login, String password) {
-        this.id = id;
+    public Account(String login, String password) {
+        setId();
         this.login = login;
         this.password = password;
     }
@@ -24,8 +25,9 @@ public class Account {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId() {
+        id = nextId;
+        nextId++;
     }
 
     public String getLogin() {

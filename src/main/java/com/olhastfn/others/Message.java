@@ -7,19 +7,20 @@ import java.time.LocalDate;
  */
 public class Message {
     private int id;
+    private static int nextId=0;
     private String text;
     private Person author;
     private LocalDate date;
 
     public Message() {
-        id=0;
-        text="none";
-        author= new Person();
-        date= LocalDate.now();
+        setId();
+        text = "none";
+        author = new Person();
+        date = LocalDate.now();
     }
 
-    public Message(int id, String text, Person author) {
-        this.id = id;
+    public Message(String text, Person author) {
+        setId();
         this.text = text;
         this.author = author;
         this.date = LocalDate.now();
@@ -29,8 +30,9 @@ public class Message {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId() {
+        id = nextId;
+        nextId++;
     }
 
     public String getText() {

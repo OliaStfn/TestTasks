@@ -7,25 +7,26 @@ import java.time.LocalDate;
  */
 public class Person {
     private int id;
+    private static int nextId=0;
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
     private Account account;
 
     public Person() {
-        id = 0;
+        setId();
         name = "none";
         surname = "none";
         dateOfBirth = LocalDate.now();
-        account= new Account();
+        account = new Account();
     }
 
-    public Person(int id, String name, String surname, String login,String pass) {
-        this.id = id;
+    public Person(String name, String surname, String login, String pass) {
+        setId();
         this.name = name;
         this.surname = surname;
         dateOfBirth = LocalDate.now();
-        account= new Account(id,login,pass);
+        account = new Account(login, pass);
     }
 
     public Account getAccount() {
@@ -40,8 +41,9 @@ public class Person {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId() {
+        id = nextId;
+        nextId++;
     }
 
     public String getName() {
