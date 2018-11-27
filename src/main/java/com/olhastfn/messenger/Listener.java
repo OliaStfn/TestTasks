@@ -25,6 +25,10 @@ public class Listener {
         status = false;
     }
 
+    public Message getMessage(Message message){
+        
+    }
+
     public Chat getChat() {
         return chat;
     }
