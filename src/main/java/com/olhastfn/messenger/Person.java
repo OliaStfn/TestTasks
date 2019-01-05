@@ -1,4 +1,4 @@
-package com.olhastfn.others;
+package com.olhastfn.messenger;
 
 import java.time.LocalDate;
 

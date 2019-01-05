@@ -1,4 +1,4 @@
-package com.olhastfn.others;
+package com.olhastfn.messenger;
 
 import java.time.LocalDate;
 
@@ -25,8 +25,11 @@ public class Listener {
         status = false;
     }
 
-    public Message getMessage(Message message){
-        
+    public Message getMessage(Message message) {
+        if (message != null) {
+            status = true;
+        } else status = false;
+        return message;
     }
 
     public Chat getChat() {

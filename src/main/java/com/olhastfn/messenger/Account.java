@@ -1,4 +1,4 @@
-package com.olhastfn.others;
+package com.olhastfn.messenger;
 
 /**
  * Created on 10.11.2018.
