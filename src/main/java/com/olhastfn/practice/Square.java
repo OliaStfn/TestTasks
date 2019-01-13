@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created on 28.12.2018.
  */
-public class Square {
+public class Square extends Shape{
     private int a;
 
     public Square(int a) {
@@ -25,10 +25,14 @@ public class Square {
         this.a = a;
     }
 
-    public void printSquare() {
+    @Override
+    public void draw() {
         System.out.println("Enter size: ");
         Scanner sc = new Scanner(System.in);
         a = sc.nextInt();
+        draw(a);
+    }
+    public void draw(int a){
 
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {

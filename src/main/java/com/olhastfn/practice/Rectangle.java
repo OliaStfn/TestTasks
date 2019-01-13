@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created on 28.12.2018.
  */
-public class Rectangle {
+public class Rectangle extends Shape{
     private int a;
     private int b;
 
@@ -35,12 +35,16 @@ public class Rectangle {
         this.b = b;
     }
 
-    public void printRectangle() {
+    @Override
+    public void draw() {
         System.out.println("Enter size a: ");
         Scanner sc = new Scanner(System.in);
         a = sc.nextInt();
         System.out.println("Enter size b: ");
         b = sc.nextInt();
+        draw(a,b);
+    }
+    public void draw(int a, int b){
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
                 System.out.print("*");
