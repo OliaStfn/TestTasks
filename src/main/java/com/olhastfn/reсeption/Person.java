@@ -1,25 +1,30 @@
-package com.olhastfn.reseption;
+package com.olhastfn.reсeption;
 
 import java.time.LocalDate;
 
 public class Person {
     private int id;
+    private static int nextId = 1;
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
 
     public Person() {
-        id = 0;
+        setId();
         name = "none";
         surname = "none";
         dateOfBirth = LocalDate.now();
     }
 
     public Person(String name, String surname) {
-        this.id = id;
+        this();
         this.name = name;
         this.surname = surname;
-        dateOfBirth = LocalDate.now();
+    }
+
+    public Person(String name, String surname, LocalDate dateOfBirth) {
+        this(name, surname);
+        this.dateOfBirth = dateOfBirth;
     }
 
     public int getId() {
@@ -28,6 +33,11 @@ public class Person {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setId() {
+        id = nextId;
+        nextId++;
     }
 
     public String getName() {
